@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tooltip_fab_creation">Добавление записи</string>
+    <string name="placeholder_one_line_label">Какой-то текст</string>
+    <string name="placeholder_multi_line_label">Какой-то текст, его очень много, невероятно много, нереально много аааааааааа </string>
+    <string name="default_nowEmpty_text">Сейчас здесь пусто.</string>
+    <string name="default_grantPermission_buttonText">Выдать доступ</string>
+    <string name="icon_search_clear_content_description">Очистить поиск</string>
+</resources>
