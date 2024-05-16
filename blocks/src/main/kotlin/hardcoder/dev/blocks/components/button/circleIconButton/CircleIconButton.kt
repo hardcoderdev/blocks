@@ -7,6 +7,17 @@ import hardcoder.dev.blocks.components.button.internal.circleIconButton.Outlined
 import hardcoder.dev.blocks.components.button.internal.circleIconButton.OutlinedCircleIconButtonPreview
 import hardcoder.dev.blocks.preview.elements.ElementPreview
 
+/**
+ * Circle button with icon.
+ *
+ * Has 2 variants:
+ *
+ * 1) Filled - @see [FilledCircleIconButton]
+ * 1) Outlined - @see [OutlinedCircleIconButton]
+ *
+ * All variants take as a @param [circleIconButtonConfig] - config for button configuration
+ */
+
 @Composable
 fun CircleIconButton(circleIconButtonConfig: CircleIconButtonConfig) {
     when (circleIconButtonConfig) {

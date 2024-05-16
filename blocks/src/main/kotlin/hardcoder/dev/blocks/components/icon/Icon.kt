@@ -4,6 +4,7 @@ import androidx.annotation.DrawableRes
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import hardcoder.dev.blocks.R
 import hardcoder.dev.blocks.preview.elements.ElementPreview
@@ -15,12 +16,13 @@ fun Icon(
     modifier: Modifier = Modifier,
     @DrawableRes iconResId: Int,
     contentDescription: String? = null,
+    tintColor: Color = MaterialTheme.colorScheme.onBackground,
 ) {
     MaterialIcon(
         modifier = modifier,
         painter = painterResource(id = iconResId),
         contentDescription = contentDescription,
-        tint = MaterialTheme.colorScheme.onBackground,
+        tint = tintColor,
     )
 }
 

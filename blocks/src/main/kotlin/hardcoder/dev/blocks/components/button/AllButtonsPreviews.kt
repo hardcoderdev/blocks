@@ -4,6 +4,9 @@ import androidx.compose.runtime.Composable
 import hardcoder.dev.blocks.preview.elements.ElementPreview
 import hardcoder.dev.blocks.components.button.internal.circleIconButton.FilledCircleIconButtonPreview
 import hardcoder.dev.blocks.components.button.internal.circleIconButton.OutlinedCircleIconButtonPreview
+import hardcoder.dev.blocks.components.button.internal.fabButton.ExtendedFabButtonPreview
+import hardcoder.dev.blocks.components.button.internal.fabButton.LargeFabButtonPreview
+import hardcoder.dev.blocks.components.button.internal.fabButton.SmallFabButtonPreview
 import hardcoder.dev.blocks.components.button.internal.managementButton.CardManagementButtonPreview
 import hardcoder.dev.blocks.components.button.internal.managementButton.ChipManagementButtonPreview
 import hardcoder.dev.blocks.components.button.internal.radioButton.FilledRadioButtonPreview
@@ -71,4 +74,22 @@ private fun ChipManagementButtonPreview() {
 @Composable
 private fun CardManagementButtonPreview() {
     CardManagementButtonPreview()
+}
+
+@ElementPreview
+@Composable
+private fun SmallFabButtonPreview() {
+    SmallFabButtonPreview()
+}
+
+@ElementPreview
+@Composable
+private fun LargeFabButtonPreview() {
+    LargeFabButtonPreview()
+}
+
+@ElementPreview
+@Composable
+private fun ExtendedFabButtonPreview() {
+    ExtendedFabButtonPreview()
 }

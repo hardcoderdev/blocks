@@ -1,20 +1,15 @@
 package hardcoder.dev.blocks.components.containers
 
-import androidx.annotation.DrawableRes
-import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.systemBars
-import androidx.compose.material3.LargeFloatingActionButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
 import hardcoder.dev.blocks.R
-import hardcoder.dev.blocks.components.icon.Icon
-import hardcoder.dev.blocks.components.tooltip.Tooltip
-import hardcoder.dev.blocks.components.tooltip.TooltipConfig
+import hardcoder.dev.blocks.components.button.fabButton.FabButton
+import hardcoder.dev.blocks.components.button.fabButton.FabConfig
 import hardcoder.dev.blocks.components.topBar.Action
 import hardcoder.dev.blocks.components.topBar.ActionConfig
 import hardcoder.dev.blocks.components.topBar.DropdownConfig
@@ -24,13 +19,6 @@ import hardcoder.dev.blocks.components.topBar.TopBarConfig
 import hardcoder.dev.blocks.components.topBar.TopBarType
 import hardcoder.dev.blocks.preview.elements.ElementPreview
 import hardcoder.dev.blocks.preview.values.BlocksThemePreview
-
-data class FabConfig(
-    val modifier: Modifier = Modifier,
-    @DrawableRes val iconResId: Int = R.drawable.ic_add,
-    @StringRes val tooltipResId: Int = R.string.tooltip_fab_creation,
-    val onFabClick: () -> Unit,
-)
 
 @Composable
 fun ScaffoldWrapper(
@@ -50,22 +38,7 @@ fun ScaffoldWrapper(
             )
         },
         floatingActionButton = {
-            fabConfig?.let {
-                Tooltip(
-                    tooltipConfig = TooltipConfig.Plain(
-                        tooltipResId = fabConfig.tooltipResId,
-                        modifier = Modifier.padding(end = 16.dp, bottom = 8.dp),
-                        content = {
-                            LargeFloatingActionButton(onClick = fabConfig.onFabClick) {
-                                Icon(
-                                    iconResId = fabConfig.iconResId,
-                                    contentDescription = null,
-                                )
-                            }
-                        },
-                    ),
-                )
-            } ?: Unit
+            fabConfig?.let { FabButton(fabConfig = fabConfig) }
         },
     ) { paddingValues ->
         Column(
@@ -115,8 +88,8 @@ private fun ScaffoldWrapperPreview() {
                     ),
                 ),
             ),
-            fabConfig = FabConfig(
-                tooltipResId = R.string.default_nowEmpty_text,
+            fabConfig = FabConfig.LargeFab(
+                iconResId = R.drawable.ic_add,
                 onFabClick = {},
             ),
         )

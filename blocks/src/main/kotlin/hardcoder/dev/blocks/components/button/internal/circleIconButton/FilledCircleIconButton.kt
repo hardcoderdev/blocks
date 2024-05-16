@@ -17,6 +17,13 @@ import hardcoder.dev.blocks.preview.values.BlocksThemePreview
 import androidx.compose.material3.Icon as MaterialIcon
 import androidx.compose.material3.IconButton as MaterialIconButton
 
+/**
+ * @param [modifier] optional modifier for button
+ * @param [onClick] callback that is called when the button is clicked
+ * @param [iconResId] icon drawable resource identifier for button
+ * @param [contentDescription] optional content description for button. By default is null (empty string in the end)
+ */
+
 @Composable
 internal fun FilledCircleIconButton(
     modifier: Modifier = Modifier,
