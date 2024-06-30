@@ -56,6 +56,7 @@ internal fun FilledInputText(
     keyboardOptions: KeyboardOptions = KeyboardOptions.Default,
     keyboardActions: KeyboardActions = KeyboardActions.Default,
     isMultiLine: Boolean = false,
+    minLines: Int = 1,
     @StringRes errorTextResId: Int? = null,
     interactionSource: MutableInteractionSource = remember { MutableInteractionSource() },
     shape: Shape = TextFieldDefaults.shape,
@@ -88,7 +89,7 @@ internal fun FilledInputText(
         keyboardActions = keyboardActions,
         singleLine = !isMultiLine,
         maxLines = if (isMultiLine) Int.MAX_VALUE else 1,
-        minLines = 1,
+        minLines = minLines,
         isError = errorTextResId != null,
         interactionSource = interactionSource,
         shape = shape,
@@ -102,7 +103,7 @@ internal fun FilledInputText(
     ) {
         ErrorText(
             modifier = Modifier.padding(top = 8.dp),
-            text = stringResource(id = errorTextResId ?: 0),
+            text = errorTextResId?.let { stringResource(id = it) } ?: "",
         )
     }
 }
