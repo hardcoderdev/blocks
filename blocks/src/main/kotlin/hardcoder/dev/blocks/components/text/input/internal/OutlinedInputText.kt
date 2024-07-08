@@ -57,6 +57,7 @@ internal fun OutlinedInputText(
     keyboardActions: KeyboardActions = KeyboardActions.Default,
     isMultiLine: Boolean = false,
     minLines: Int = 1,
+    formatArgs: List<Any> = emptyList(),
     @StringRes errorTextResId: Int? = null,
     interactionSource: MutableInteractionSource = remember { MutableInteractionSource() },
     shape: Shape = TextFieldDefaults.shape,
@@ -103,7 +104,12 @@ internal fun OutlinedInputText(
     ) {
         ErrorText(
             modifier = Modifier.padding(top = 8.dp),
-            text = stringResource(id = errorTextResId ?: 0),
+            text = errorTextResId?.let {
+                stringResource(
+                    id = errorTextResId,
+                    formatArgs = formatArgs.toTypedArray()
+                )
+            } ?: "",
         )
     }
 }

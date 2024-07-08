@@ -58,6 +58,7 @@ internal fun FilledInputText(
     isMultiLine: Boolean = false,
     minLines: Int = 1,
     @StringRes errorTextResId: Int? = null,
+    formatArgs: List<Any> = emptyList(),
     interactionSource: MutableInteractionSource = remember { MutableInteractionSource() },
     shape: Shape = TextFieldDefaults.shape,
     colors: TextFieldColors = TextFieldDefaults.colors(),
@@ -103,7 +104,12 @@ internal fun FilledInputText(
     ) {
         ErrorText(
             modifier = Modifier.padding(top = 8.dp),
-            text = errorTextResId?.let { stringResource(id = it) } ?: "",
+            text = errorTextResId?.let {
+                stringResource(
+                    id = errorTextResId,
+                    formatArgs = formatArgs.toTypedArray()
+                )
+            } ?: "",
         )
     }
 }
