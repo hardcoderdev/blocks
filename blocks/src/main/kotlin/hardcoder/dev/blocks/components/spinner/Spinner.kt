@@ -31,10 +31,10 @@ import hardcoder.dev.blocks.preview.values.BlocksThemePreview
 @Composable
 fun Spinner(
     isExpanded: Boolean,
-    items: List<String>,
+    @StringRes items: List<Int>,
     @StringRes promptResId: Int,
     @StringRes selectedItemResId: Int,
-    onSelectedItemChanged: (String) -> Unit,
+    onSelectedItemChanged: (Int) -> Unit,
     onExpandedChanged: (Boolean) -> Unit,
 ) {
     ExposedDropdownMenuBox(
@@ -63,7 +63,12 @@ fun Spinner(
             items.forEach { item ->
                 DropdownMenuItem(
                     contentPadding = ExposedDropdownMenuDefaults.ItemContentPadding,
-                    text = { Text(text = item, style = MaterialTheme.typography.bodyLarge) },
+                    text = {
+                        Text(
+                            text = stringResource(id = item),
+                            style = MaterialTheme.typography.bodyLarge
+                        )
+                    },
                     onClick = {
                         onSelectedItemChanged(item)
                         onExpandedChanged(false)
@@ -87,9 +92,9 @@ private fun SpinnerPreview() {
         ) {
             Spinner(
                 promptResId = R.string.default_nowEmpty_text,
-                items = listOf("Test", "Sex"),
+                items = listOf(R.string.default_nowEmpty_text, R.string.placeholder_one_line_label),
                 onSelectedItemChanged = {},
-                onExpandedChanged = { isExpanded = it},
+                onExpandedChanged = { isExpanded = it },
                 selectedItemResId = R.string.placeholder_one_line_label,
                 isExpanded = isExpanded
             )
