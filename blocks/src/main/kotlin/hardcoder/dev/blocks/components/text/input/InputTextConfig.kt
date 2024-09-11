@@ -1,6 +1,5 @@
 package hardcoder.dev.blocks.components.text.input
 
-import androidx.annotation.StringRes
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
@@ -32,8 +31,7 @@ sealed class InputTextConfig {
         val keyboardActions: KeyboardActions = KeyboardActions.Default,
         val isMultiLine: Boolean = false,
         val minLines: Int = 1,
-        @StringRes val errorTextResId: Int? = null,
-        val formatArgs: List<Any> = emptyList(),
+        val errorText: String? = null,
         val interactionSource: MutableInteractionSource? = null,
         val textStyle: TextStyle? = null,
         val shape: Shape? = null,
@@ -59,8 +57,7 @@ sealed class InputTextConfig {
         val keyboardActions: KeyboardActions = KeyboardActions.Default,
         val isMultiLine: Boolean = false,
         val minLines: Int = 1,
-        @StringRes val errorTextResId: Int? = null,
-        val formatArgs: List<Any> = emptyList(),
+        val errorText: String? = null,
         val interactionSource: MutableInteractionSource? = null,
         val textStyle: TextStyle? = null,
         val shape: Shape? = null,

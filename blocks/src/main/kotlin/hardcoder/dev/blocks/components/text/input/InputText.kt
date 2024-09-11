@@ -34,8 +34,7 @@ fun InputText(inputTextConfig: InputTextConfig) {
             keyboardOptions = inputTextConfig.keyboardOptions,
             isMultiLine = inputTextConfig.isMultiLine,
             minLines = inputTextConfig.minLines,
-            errorTextResId = inputTextConfig.errorTextResId,
-            formatArgs = inputTextConfig.formatArgs,
+            errorText = inputTextConfig.errorText,
             shape = inputTextConfig.shape ?: TextFieldDefaults.shape,
             colors = inputTextConfig.colors ?: TextFieldDefaults.colors(),
             interactionSource = inputTextConfig.interactionSource ?: remember {
@@ -63,8 +62,7 @@ fun InputText(inputTextConfig: InputTextConfig) {
             keyboardOptions = inputTextConfig.keyboardOptions,
             isMultiLine = inputTextConfig.isMultiLine,
             minLines = inputTextConfig.minLines,
-            errorTextResId = inputTextConfig.errorTextResId,
-            formatArgs = inputTextConfig.formatArgs,
+            errorText = inputTextConfig.errorText,
             shape = inputTextConfig.shape ?: TextFieldDefaults.shape,
             colors = inputTextConfig.colors ?: TextFieldDefaults.colors(),
             interactionSource = inputTextConfig.interactionSource ?: remember {

@@ -1,6 +1,5 @@
 package hardcoder.dev.blocks.components.text.input.internal
 
-import androidx.annotation.StringRes
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.expandVertically
 import androidx.compose.animation.fadeIn
@@ -57,8 +56,7 @@ internal fun FilledInputText(
     keyboardActions: KeyboardActions = KeyboardActions.Default,
     isMultiLine: Boolean = false,
     minLines: Int = 1,
-    @StringRes errorTextResId: Int? = null,
-    formatArgs: List<Any> = emptyList(),
+    errorText: String? = null,
     interactionSource: MutableInteractionSource = remember { MutableInteractionSource() },
     shape: Shape = TextFieldDefaults.shape,
     colors: TextFieldColors = TextFieldDefaults.colors(),
@@ -91,25 +89,20 @@ internal fun FilledInputText(
         singleLine = !isMultiLine,
         maxLines = if (isMultiLine) Int.MAX_VALUE else 1,
         minLines = minLines,
-        isError = errorTextResId != null,
+        isError = errorText != null,
         interactionSource = interactionSource,
         shape = shape,
         colors = colors
     )
 
     AnimatedVisibility(
-        visible = errorTextResId != null,
+        visible = errorText != null,
         enter = fadeIn() + expandVertically(),
         exit = fadeOut() + shrinkVertically(),
     ) {
         ErrorText(
             modifier = Modifier.padding(top = 8.dp),
-            text = errorTextResId?.let {
-                stringResource(
-                    id = errorTextResId,
-                    formatArgs = formatArgs.toTypedArray()
-                )
-            } ?: "",
+            text = errorText ?: "",
         )
     }
 }
@@ -123,7 +116,7 @@ internal fun FilledInputTextPreview() {
             text = "Gustav",
             onTextChanged = {},
             leadingIcon = { Icon(iconResId = R.drawable.ic_create) },
-            errorTextResId = R.string.default_nowEmpty_text,
+            errorText = stringResource(id = R.string.default_nowEmpty_text),
         )
     }
 }
