@@ -1,11 +1,11 @@
 [versions]
-agp = "8.6.0"
-kotlin = "1.9.24"
-coreKtx = "1.13.1"
-lifecycleRuntimeKtx = "2.8.5"
-activityCompose = "1.9.2"
+agp = "8.6.1"
+kotlin = "2.0.21"
+coreKtx = "1.15.0"
+lifecycleRuntimeKtx = "2.8.7"
+activityCompose = "1.9.3"
 lottie-compose = "6.0.0"
-composeBom = "2024.09.01"
+composeBom = "2024.11.00"
 
 [libraries]
 
@@ -30,4 +30,4 @@ compose-material3 = { module = "androidx.compose.material3:material3" }
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
-
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }

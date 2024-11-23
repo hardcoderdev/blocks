@@ -44,7 +44,7 @@ internal fun FilledInputText(
     isEnabled: Boolean = true,
     isReadOnly: Boolean = false,
     textStyle: TextStyle = LocalTextStyle.current,
-    label: (@Composable () -> Unit)? = null,
+    label: String? = null,
     placeholder: (@Composable () -> Unit)? = null,
     supportingText: (@Composable () -> Unit)? = null,
     leadingIcon: (@Composable () -> Unit)? = null,
@@ -76,7 +76,7 @@ internal fun FilledInputText(
         enabled = isEnabled,
         readOnly = isReadOnly,
         textStyle = textStyle,
-        label = label,
+        label = { Label(text = label ?: "") },
         placeholder = placeholder,
         supportingText = supportingText,
         leadingIcon = leadingIcon,
@@ -112,7 +112,7 @@ internal fun FilledInputText(
 internal fun FilledInputTextPreview() {
     BlocksThemePreview {
         FilledInputText(
-            label = { Label(text = "Enter your name here...") },
+            label = "Enter your name here...",
             text = "Gustav",
             onTextChanged = {},
             leadingIcon = { Icon(iconResId = R.drawable.ic_create) },

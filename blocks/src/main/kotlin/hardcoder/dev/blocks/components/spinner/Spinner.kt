@@ -21,7 +21,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import hardcoder.dev.blocks.R
-import hardcoder.dev.blocks.components.text.Label
 import hardcoder.dev.blocks.components.text.input.InputText
 import hardcoder.dev.blocks.components.text.input.InputTextConfig
 import hardcoder.dev.blocks.preview.elements.ElementPreview
@@ -49,7 +48,7 @@ fun Spinner(
                 text = stringResource(id = selectedItemResId),
                 onTextChanged = { },
                 isReadOnly = true,
-                label = { Label(text = stringResource(id = promptResId)) },
+                label = stringResource(id = promptResId),
                 trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = isExpanded) },
                 colors = ExposedDropdownMenuDefaults.textFieldColors(),
             )
