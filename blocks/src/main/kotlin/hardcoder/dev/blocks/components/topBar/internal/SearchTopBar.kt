@@ -93,11 +93,11 @@ fun SearchTopBar(
                             .focusRequester(focusRequester),
                         value = searchText,
                         onValueChange = onSearchTextChanged,
-                        textStyle = MaterialTheme.typography.labelLarge,
+                        textStyle = MaterialTheme.typography.labelMedium,
                         placeholder = {
                             Text(
                                 text = stringResource(id = placeholderText),
-                                style = MaterialTheme.typography.labelLarge,
+                                style = MaterialTheme.typography.labelMedium,
                             )
                         },
                         colors = TextFieldDefaults.colors(
