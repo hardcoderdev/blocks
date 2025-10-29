@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "hardcoder.dev.blocks"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         minSdk = 26
