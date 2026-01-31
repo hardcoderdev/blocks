@@ -24,6 +24,8 @@ fun CircleIconButton(circleIconButtonConfig: CircleIconButtonConfig) {
         is CircleIconButtonConfig.Filled -> {
             FilledCircleIconButton(
                 modifier = circleIconButtonConfig.modifier,
+                shapeSize = circleIconButtonConfig.shapeSize,
+                buttonSize = circleIconButtonConfig.buttonSize,
                 onClick = circleIconButtonConfig.onClick,
                 iconResId = circleIconButtonConfig.iconResId,
                 contentDescription = circleIconButtonConfig.contentDescription,
@@ -33,6 +35,8 @@ fun CircleIconButton(circleIconButtonConfig: CircleIconButtonConfig) {
         is CircleIconButtonConfig.Outlined -> {
             OutlinedCircleIconButton(
                 modifier = circleIconButtonConfig.modifier,
+                shapeSize = circleIconButtonConfig.shapeSize,
+                buttonSize = circleIconButtonConfig.buttonSize,
                 onClick = circleIconButtonConfig.onClick,
                 iconResId = circleIconButtonConfig.iconResId,
                 contentDescription = circleIconButtonConfig.contentDescription,

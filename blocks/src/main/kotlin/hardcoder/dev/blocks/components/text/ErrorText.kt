@@ -6,6 +6,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextDecoration
 import hardcoder.dev.blocks.R
 import hardcoder.dev.blocks.preview.elements.ElementPreview
 import hardcoder.dev.blocks.preview.values.BlocksThemePreview
@@ -14,6 +15,7 @@ import hardcoder.dev.blocks.preview.values.BlocksThemePreview
 fun ErrorText(
     text: String,
     modifier: Modifier = Modifier,
+    textDecoration: TextDecoration? = null,
 ) {
     Text(
         modifier = modifier,
@@ -21,7 +23,9 @@ fun ErrorText(
         text = text,
         imageVector = Icons.Default.Error,
         iconTint = MaterialTheme.colorScheme.error,
-        style = MaterialTheme.typography.titleSmall,
+        style = MaterialTheme.typography.titleSmall.copy(
+            textDecoration = textDecoration,
+        ),
     )
 }
 

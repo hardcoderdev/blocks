@@ -4,6 +4,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextDecoration
 import hardcoder.dev.blocks.R
 import hardcoder.dev.blocks.preview.elements.ElementPreview
 import hardcoder.dev.blocks.preview.values.BlocksThemePreview
@@ -11,12 +12,15 @@ import hardcoder.dev.blocks.preview.values.BlocksThemePreview
 @Composable
 fun Description(
     modifier: Modifier = Modifier,
+    textDecoration: TextDecoration? = null,
     text: String,
 ) {
     Text(
         text = text,
         modifier = modifier,
-        style = MaterialTheme.typography.titleMedium,
+        style = MaterialTheme.typography.titleMedium.copy(
+            textDecoration = textDecoration,
+        ),
     )
 }
 
